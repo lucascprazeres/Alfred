@@ -6,6 +6,7 @@
   "author": "Lucas Prazeres <olucascostadp@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node build/bot.js",
     "dev": "tsnd src/bot.ts --ingnore-watch node_modules --transpileOnly"
   },
   "devDependencies": {
