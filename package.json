@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
+    "@giphy/js-fetch-api": "^2.0.1",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
   }
 }
