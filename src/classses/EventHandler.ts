@@ -4,7 +4,10 @@ import CommandHandler from './CommandHandler';
 import globalOptions from '../globals';
 
 export default class EventHandler {
-  private commandHandler = new CommandHandler(container.resolve('GifProvider'));
+  private commandHandler = new CommandHandler(
+    container.resolve('GifProvider'),
+    container.resolve('NewsProvider'),
+  );
 
   async handleMessageEvent(msg: Message): Promise<void> {
     if (msg.content[0] === globalOptions.commandPrefix) {
