@@ -22,11 +22,12 @@ export default class EventHandler {
         args,
       );
 
-      if (response[0] !== '') {
+      if (response.length !== 0) {
         msg.react('👍');
-        msg.reply(response);
+        msg.channel.send(response);
       } else {
         msg.react('🤔');
+        msg.reply('Não encontrei o que você pediu. Tente novamente.');
       }
     }
   }

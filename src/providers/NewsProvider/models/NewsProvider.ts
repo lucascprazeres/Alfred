@@ -1,3 +1,3 @@
 export default interface NewsProvider {
-  search: (term: string) => Promise<string[]>;
+  search: (term: string, country?: string) => Promise<string[]>;
 }

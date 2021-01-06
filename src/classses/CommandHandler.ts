@@ -20,20 +20,36 @@ export default class CommandHandler {
       return gifs;
     },
     news: async (args: string[]): Promise<string[]> => {
-      const headlinesAndLinks = await this.newsProvider.search(args.join(' '));
+      let searchTerms;
+      let country;
+
+      if (args[0].includes('--')) {
+        country = args[0].replace('--', '');
+        searchTerms = args.splice(1, args.length - 1);
+      } else {
+        searchTerms = [...args];
+      }
+
+      let headlinesAndLinks: string[] = [];
+      try {
+        headlinesAndLinks = await this.newsProvider.search(
+          searchTerms.join(' '),
+          country,
+        );
+      } catch (err) {
+        console.log(err);
+      }
 
       return headlinesAndLinks;
     },
   };
 
   async run(command: string, args: string[]): Promise<string[]> {
-    let response = [''];
+    let response: string[] = [];
     try {
       response = await this.commands[command](args);
     } catch (err) {
-      if (!(err instanceof TypeError)) {
-        console.log(err);
-      }
+      console.log(err);
     }
 
     return response;
