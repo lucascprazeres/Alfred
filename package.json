@@ -6,8 +6,7 @@
   "author": "Lucas Prazeres <olucascostadp@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node build/bot.js",
-    "dev": "tsnd src/bot.ts --ingnore-watch node_modules --transpileOnly"
+    "dev": "tsnd src/index.ts --ingnore-watch node_modules --transpileOnly"
   },
   "devDependencies": {
     "@types/node": "^14.14.20",
@@ -28,6 +27,7 @@
     "@giphy/js-fetch-api": "^2.0.1",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "tsyringe": "^4.4.0"
   }
 }

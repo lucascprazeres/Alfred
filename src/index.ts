@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
 import { Client } from 'discord.js';
 
-import EventHandler from './handlers/EventHandler';
+import EventHandler from './classses/EventHandler';
 
-dotenv.config();
+import './config';
 
 const client = new Client();
 const eventHandler = new EventHandler();
