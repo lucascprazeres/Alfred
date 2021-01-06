@@ -28,6 +28,7 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
+    "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.4.0"
   }
 }

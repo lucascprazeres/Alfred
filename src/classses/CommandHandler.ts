@@ -1,18 +1,20 @@
-import { GiphyFetch } from '@giphy/js-fetch-api';
+import { inject } from 'tsyringe';
 import { Commands } from '../interfaces';
+import GifProvider from '../providers/GifProvider/models/GifProvider';
 
 export default class CommandHandler {
-  giphyFetch = new GiphyFetch(process.env.GIPHY_API_TOKEN || '');
+  constructor(
+    @inject('GifProvider')
+    private gifProvider: GifProvider,
+  ) {}
 
   private commands: Commands = {
     gif: async (args: string[]): Promise<string[]> => {
       const searchTerm = args.join(' ');
 
-      const { data: gifResponse } = await this.giphyFetch.search(searchTerm, {
-        limit: 1,
-      });
+      const gifs = await this.gifProvider.search(searchTerm);
 
-      return [gifResponse[0].url];
+      return gifs;
     },
   };
 

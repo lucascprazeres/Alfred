@@ -1,7 +1,9 @@
-import { Client } from 'discord.js';
+import 'reflect-metadata';
 
+import { Client } from 'discord.js';
 import EventHandler from './classses/EventHandler';
 
+import './providers';
 import './config';
 
 const client = new Client();

@@ -1,9 +1,10 @@
 import { Message } from 'discord.js';
+import { container } from 'tsyringe';
 import CommandHandler from './CommandHandler';
 import globalOptions from '../globals';
 
 export default class EventHandler {
-  commandHandler = new CommandHandler();
+  private commandHandler = new CommandHandler(container.resolve('GifProvider'));
 
   async handleMessageEvent(msg: Message): Promise<void> {
     if (msg.content[0] === globalOptions.commandPrefix) {
