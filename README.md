@@ -1,2 +1,3 @@
-# beatbot
-a simple music bot for discord
+# Alfred
+
+your personal butler on discord
