@@ -1,4 +1,4 @@
-<div align=center><img src=".github/logo.png"/></div>
+<div align=center><img width="150" src=".github/logo.png"/></div>
 
 <h3 align=center>Your personal butler on discord</h3>
 
