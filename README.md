@@ -1,6 +1,8 @@
 <div align=center><img width="150" src=".github/logo.png"/></div>
 
-<h3 align=center>Your personal butler on discord</h3>
+<h1 align=center>Alfred</h1>
+<h3 align=center>Your personal butler on discord.</h3>
+
 
 <div align=center>
 <img src="https://img.shields.io/badge/nodejs-v15.30-green"/>
