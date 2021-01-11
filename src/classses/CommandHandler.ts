@@ -1,9 +1,9 @@
 import { inject } from 'tsyringe';
-import { Commands } from './interfaces';
+import { ICommands, ICommandHandler } from './interfaces';
 import GifProvider from '../providers/GifProvider/models/GifProvider';
 import NewsProvider from '../providers/NewsProvider/models/NewsProvider';
 
-export default class CommandHandler {
+export default class CommandHandler implements ICommandHandler {
   constructor(
     @inject('GifProvider')
     private gifProvider: GifProvider,
@@ -11,7 +11,7 @@ export default class CommandHandler {
     private newsProvider: NewsProvider,
   ) {}
 
-  private commands: Commands = {
+  private commands: ICommands = {
     gif: async (args: string[]): Promise<string[]> => {
       const searchTerm = args.join(' ');
 
